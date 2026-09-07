@@ -1,0 +1,17 @@
+module.exports = {
+  button: "button",
+  primary: "primary",
+  ghost: "ghost",
+  card: "card",
+  cardEyebrow: "cardEyebrow",
+  cardTitle: "cardTitle",
+  cardBody: "cardBody",
+  header: "header",
+  headerInner: "headerInner",
+  logo: "logo",
+  logoImage: "logoImage",
+  nav: "nav",
+  navOpen: "navOpen",
+  navLink: "navLink",
+  menuToggle: "menuToggle",
+};

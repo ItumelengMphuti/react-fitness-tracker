@@ -29,6 +29,13 @@ function ExerciseDetail() {
           <span className={styles.eyebrow}>
             {exercise.category} · {exercise.difficulty}
           </span>
+
+          <h1>{exercise.name}</h1>
+
+          <p className={styles.detailDescription}>{exercise.description}</p>
+          <span className={styles.eyebrow}>
+            {exercise.category} · {exercise.difficulty}
+          </span>
           <h1>{exercise.name}</h1>
           <p className={styles.detailDescription}>{exercise.description}</p>
           <div className={styles.detailMeta}>
@@ -67,16 +74,6 @@ function ExerciseDetail() {
               title={`${exercise.name} demonstration`}
               allowFullScreen
             />
-          </div>
-          <div className={styles.audioCard}>
-            <span className={styles.eyebrow}>Training soundtrack</span>
-            <h3>Stay in the zone</h3>
-            <audio
-              controls
-              src="https://cdn.pixabay.com/audio/2022/03/15/audio_7d3b6d3d5f.mp3"
-            >
-              Your browser does not support audio.
-            </audio>
           </div>
         </section>
       </div>

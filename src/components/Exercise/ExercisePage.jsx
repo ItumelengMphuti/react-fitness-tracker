@@ -92,6 +92,11 @@ function ExercisesPage() {
       <div className={styles.exerciseGrid}>
         {filtered.map((exercise) => (
           <article className={styles.exerciseCard} key={exercise.id}>
+            <img
+              src={exercise.image}
+              alt={exercise.name}
+              className={styles.exerciseCardImage}
+            />
             <div className={styles.exerciseCardTop}>
               <span className={styles.tag}>{exercise.category}</span>
               <span>{exercise.duration}</span>

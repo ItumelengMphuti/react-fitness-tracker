@@ -2,17 +2,18 @@
    DESIGN TOKENS
    ============================================ */
 :root {
-  /* Color */
-  --color-bg: #14161a;          /* charcoal — main background */
-  --color-surface: #1e2128;     /* steel — cards, raised panels */
-  --color-surface-alt: #2a2e35; /* lighter steel — hover/alt panels */
-  --color-line: #34383f;        /* grid line gray — dividers, rules */
-  --color-text: #f2f1ed;        /* chalk white — primary text */
-  --color-text-muted: #9a9fa8;  /* dimmed steel — secondary text */
-  --color-accent: #e8432f;      /* PR red — records, primary actions */
-  --color-accent-dim: #7a2a20;  /* muted red — borders on accent elements */
-  --color-blue: #5c7a99;        /* iron blue — secondary accent */
-  --color-paper: #ece7da;       /* index-card paper for the hero signature */
+
+  --color-bg: #12141a;           /* navy-charcoal — main background, from the logo mark */
+  --color-surface: #1c1f26;      /* steel — cards, raised panels */
+  --color-surface-alt: #262a33;  /* lighter steel — hover/alt panels */
+  --color-line: #323642;         /* grid line gray — dividers, rules */
+  --color-text: #f2f1e9;         /* chalk white — primary text, echoes the logo background */
+  --color-text-muted: #9aa1ac;   /* slate gray-blue — matches the "FIT" wordmark */
+  --color-accent: #a3e635;       /* lime green — matches the "FLOW" wordmark, primary actions */
+  --color-accent-dim: #3d5a17;   /* deep moss — borders/backgrounds on accent elements */
+  --color-on-accent: #12141a;    /* dark text/icons placed on the lime accent for contrast */
+  --color-blue: #6b7480;         /* slate — secondary accent, echoes the "FIT" gray-blue */
+  --color-paper: #ece7da;        /* index-card paper for the hero signature */
   --color-paper-text: #1c1a16;
 
   /* Type */

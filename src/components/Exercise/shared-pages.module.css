@@ -18,7 +18,7 @@
   line-height: 1.7;
 }
 .eyebrow {
-  color: #ff8d7b;
+  color: var(--color-accent);
   font: 0.72rem var(--font-mono);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -82,6 +82,13 @@
   transform: translateY(-3px);
   border-color: var(--color-accent);
 }
+.exerciseCardImage {
+  width: calc(100% + 44px);
+  height: 170px;
+  margin: -22px -22px 20px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--color-line);
+}
 .exerciseCardTop,
 .meta,
 .cardActions,
@@ -98,7 +105,7 @@
   text-transform: uppercase;
 }
 .tag {
-  color: #ff8d7b;
+  color: var(--color-accent);
 }
 .exerciseCard h2 {
   font-size: 1.75rem;
@@ -120,14 +127,14 @@
   margin-top: 18px;
 }
 .textLink {
-  color: #ff8d7b;
+  color: var(--color-accent);
   font-family: var(--font-mono);
   font-size: 0.8rem;
 }
 .smallButton,
 .primaryButton {
   border: 1px solid var(--color-accent);
-  color: var(--color-text);
+  color: var(--color-on-accent);
   background: var(--color-accent);
   padding: 10px 14px;
   border-radius: 4px;
@@ -135,7 +142,7 @@
   text-transform: uppercase;
 }
 .smallButton {
-  color: #ffad9f;
+  color: #c3ee7d;
   background: transparent;
   border-color: var(--color-accent-dim);
 }
@@ -326,7 +333,7 @@
   width: 100%;
   max-width: 52px;
   min-height: 12px;
-  background: linear-gradient(var(--color-accent), #8e261d);
+  background: linear-gradient(var(--color-accent), #355212);
   border-radius: 3px 3px 0 0;
 }
 .detailLayout {
@@ -385,17 +392,6 @@
   width: 100%;
   height: 100%;
   border: 0;
-}
-.audioCard {
-  padding: 22px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-line);
-}
-.audioCard h3 {
-  margin: 10px 0 17px;
-}
-.audioCard audio {
-  width: 100%;
 }
 .detailLayout .addExercise {
   margin-top: 30px;

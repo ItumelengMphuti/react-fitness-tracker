@@ -1,25 +1,31 @@
-import styles from './common.module.css';
+import { Link } from "react-router-dom";
+import styles from "./common.module.css";
 
 function Footer() {
-    return (
-      <footer className={styles.footer}>
-        <div className={`container ${styles.footerInner}`}>
-          <div>
-            <span className={styles.logoMark}>LOGO</span>
-            <p className={styles.footerNote}>Setbook - training log</p>
-          </div>
-
-          <div className={styles.footerLinks}>
-            <a href="#exercises">Exercises</a>
-            <a href="#planner">Planner</a>
-            <a href="#progress">Progress</a>
-          </div>
-          <p className={styles.footerCopy}>
-            © {new Date().getFullYear()} Setbook.
-          </p>
+  return (
+    <footer className={styles.footer}>
+      <div className={`container ${styles.footerInner}`}>
+        <div>
+          <img
+            src="/assets/images/logo2.png"
+            alt="Setbook"
+            className={styles.footerLogo}
+          />
+          <p className={styles.footerNote}>FitFlow - Track your workout</p>
         </div>
-      </footer>
-    );
+
+        <div className={styles.footerLinks}>
+          <Link to="/exercises">Exercises</Link>
+          <Link to="/planner">Planner</Link>
+          <Link to="/history">History</Link>
+          <Link to="/progress">Progress</Link>
+        </div>
+        <p className={styles.footerCopy}>
+          © {new Date().getFullYear()} FitFlow.
+        </p>
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;

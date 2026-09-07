@@ -34,7 +34,7 @@ const STEPS = [
   {
     number: "02",
     title: "Close out the workout",
-    body: "Setbook timestamps the session and files it under that day, that lift, that plan.",
+    body: "Fitflow timestamps the session and files it under that day, that lift, that plan.",
   },
   {
     number: "03",
@@ -57,13 +57,13 @@ function Home() {
               See every gain.
             </h1>
             <p className={styles.subcopy}>
-              Setbook replaces the notebook on the gym floor. Log weight and
+              Fitflow replaces the notebook on the gym floor. Log weight and
               reps as you lift, plan your split for the week, and watch your
               numbers move over months, not just one workout.
             </p>
             <div className={styles.heroActions}>
-              <Button href="#start" variant="primary">
-                Start logging
+              <Button href="/exercises" variant="primary">
+                Start tracking
               </Button>
               <Button href="#how-it-works" variant="ghost">
                 See how it works
@@ -74,8 +74,8 @@ function Home() {
           <div className={styles.heroVisual}>
             <img
               className={styles.heroImage}
-              src="/assets/images/fitness.jpg"
-              alt="Setbook fitness tracker"
+              src="/assets/images/fitness.jpeg"
+              alt="Fitflow fitness tracker"
             />
           </div>
         </div>
@@ -120,9 +120,9 @@ function Home() {
       {/* CTA */}
       <section className={styles.cta} id="start">
         <div className={`container ${styles.ctaInner}`}>
-          <h2 className={styles.ctaTitle}>Your next set is worth logging.</h2>
-          <Button href="#" variant="primary">
-            Start your log
+          <h2 className={styles.ctaTitle}>Your next set is worth tracking.</h2>
+          <Button href="/exercises" variant="primary">
+            Start tracking
           </Button>
         </div>
       </section>

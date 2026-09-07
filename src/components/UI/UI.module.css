@@ -22,12 +22,12 @@
 
 .primary {
   background: var(--color-accent);
-  color: var(--color-text);
+  color: var(--color-on-accent);
   border-color: var(--color-accent);
 }
 
 .primary:hover {
-  background: #fb4f38;
+  background: #b6f05a;
 }
 
 .ghost {
