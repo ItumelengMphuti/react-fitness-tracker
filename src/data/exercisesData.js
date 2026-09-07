@@ -1,0 +1,574 @@
+export const EXERCISES = [
+  // =========================
+  // STRENGTH
+  // =========================
+
+  {
+    id: "barbell-squat",
+    name: "Barbell Squat",
+    category: "Strength",
+    muscleGroups: ["Legs", "Core"],
+    difficulty: "Intermediate",
+    equipment: "Barbell",
+    duration: 10,
+    sets: 3,
+    reps: 10,
+    description:
+      "Build lower-body strength with a controlled, full-range squat.",
+    instructions: [
+      "Brace your core and keep your chest tall.",
+      "Sit your hips down and back until your thighs are parallel.",
+      "Drive through your mid-foot to stand, keeping your knees tracking over your toes.",
+    ],
+    image: "/assets/images/barbell-squat.jpeg",
+    videoUrl: "https://www.youtube.com/embed/ultWZbUMPL8",
+    caloriesBurn: 70,
+  },
+
+  {
+    id: "push-up",
+    name: "Push-up",
+    category: "Strength",
+    muscleGroups: ["Chest", "Shoulders", "Arms"],
+    difficulty: "Beginner",
+    equipment: "None",
+    duration: 8,
+    sets: 3,
+    reps: 12,
+    description:
+      "A classic pressing movement for your chest, shoulders, and triceps.",
+    instructions: [
+      "Place your hands just outside shoulder width.",
+      "Lower your body as one straight line until your chest nearly touches the floor.",
+      "Press the floor away and return to the starting position.",
+    ],
+    image: "/assets/images/push-up.jpeg",
+    videoUrl: "https://www.youtube.com/embed/IODxDh0iT4c",
+    caloriesBurn: 50,
+  },
+
+  {
+    id: "romanian-deadlift",
+    name: "Romanian Deadlift",
+    category: "Strength",
+    muscleGroups: ["Legs", "Back"],
+    difficulty: "Intermediate",
+    equipment: "Dumbbells",
+    duration: 12,
+    sets: 3,
+    reps: 10,
+    description:
+      "Strengthen the posterior chain through a controlled hip-hinge movement.",
+    instructions: [
+      "Stand tall with the weights close to your thighs.",
+      "Push your hips back while keeping a soft bend in your knees.",
+      "Stop when you feel tension in your hamstrings, then squeeze your glutes to return.",
+    ],
+    image: "/assets/images/romanian-deadlift.jpeg",
+    videoUrl: "https://www.youtube.com/embed/JCXUYuzwNrM",
+    caloriesBurn: 80,
+  },
+
+  {
+    id: "assisted-pull-up",
+    name: "Assisted Pull-up",
+    category: "Strength",
+    muscleGroups: ["Back", "Arms"],
+    difficulty: "Beginner",
+    equipment: "Pull-up Bar",
+    duration: 10,
+    sets: 3,
+    reps: 8,
+    description:
+      "Train your back and arms with a scalable vertical pulling movement.",
+    instructions: [
+      "Start with your shoulders down and away from your ears.",
+      "Pull your elbows toward your ribs.",
+      "Lower slowly until your arms are straight without swinging.",
+    ],
+    image: "/assets/images/assisted-pull-up.jpg",
+    videoUrl: "https://www.youtube.com/embed/eGo4IYlbE5g",
+    caloriesBurn: 60,
+  },
+
+  {
+    id: "dumbbell-shoulder-press",
+    name: "Dumbbell Shoulder Press",
+    category: "Strength",
+    muscleGroups: ["Shoulders", "Arms"],
+    difficulty: "Beginner",
+    equipment: "Dumbbells",
+    duration: 10,
+    sets: 3,
+    reps: 10,
+    description:
+      "Build shoulder and arm strength using a controlled overhead press.",
+    instructions: [
+      "Hold the dumbbells at shoulder height.",
+      "Press the weights overhead without arching your lower back.",
+      "Lower the dumbbells slowly back to shoulder height.",
+    ],
+    image: "/assets/images/shoulder-press.jpg",
+    videoUrl: "https://www.youtube.com/embed/qEwKCR5JCog",
+    caloriesBurn: 55,
+  },
+
+  {
+    id: "dumbbell-row",
+    name: "Dumbbell Row",
+    category: "Strength",
+    muscleGroups: ["Back", "Arms"],
+    difficulty: "Intermediate",
+    equipment: "Dumbbells",
+    duration: 10,
+    sets: 3,
+    reps: 10,
+    description:
+      "Strengthen the upper back and arms with a controlled rowing movement.",
+    instructions: [
+      "Hinge forward with a neutral spine.",
+      "Pull the dumbbell toward your hip.",
+      "Lower the weight slowly and repeat.",
+    ],
+    image: "/assets/images/dumbbell-row.jpg",
+    videoUrl: "https://www.youtube.com/embed/roCP6wCXPqo",
+    caloriesBurn: 60,
+  },
+
+  {
+    id: "walking-lunge",
+    name: "Walking Lunges",
+    category: "Strength",
+    muscleGroups: ["Legs", "Core"],
+    difficulty: "Beginner",
+    equipment: "None",
+    duration: 10,
+    sets: 3,
+    reps: 12,
+    description:
+      "Develop leg strength and coordination with alternating forward lunges.",
+    instructions: [
+      "Stand tall with your feet hip-width apart.",
+      "Step forward and lower your hips toward the floor.",
+      "Push through your front foot and step forward with the opposite leg.",
+    ],
+    image: "/assets/images/walking-lunge.jpg",
+    videoUrl: "https://www.youtube.com/embed/QOVaHwm-Q6U",
+    caloriesBurn: 65,
+  },
+
+  {
+    id: "diamond-push-up",
+    name: "Diamond Push-up",
+    category: "Strength",
+    muscleGroups: ["Arms", "Chest", "Shoulders"],
+    difficulty: "Advanced",
+    equipment: "None",
+    duration: 8,
+    sets: 3,
+    reps: 10,
+    description:
+      "An advanced push-up variation emphasizing the triceps and chest.",
+    instructions: [
+      "Place your hands close together beneath your chest.",
+      "Keep your body straight as you lower toward the floor.",
+      "Press through your hands to return to the starting position.",
+    ],
+    image: "/assets/images/diamond-push-up.jpg",
+    videoUrl: "https://www.youtube.com/embed/J0DnG1_S92I",
+    caloriesBurn: 65,
+  },
+
+  {
+    id: "bulgarian-split-squat",
+    name: "Bulgarian Split Squat",
+    category: "Strength",
+    muscleGroups: ["Legs", "Core"],
+    difficulty: "Advanced",
+    equipment: "Bench",
+    duration: 12,
+    sets: 3,
+    reps: 8,
+    description:
+      "Challenge single-leg strength, stability, and lower-body control.",
+    instructions: [
+      "Place one foot behind you on a bench.",
+      "Lower your hips while keeping your front knee aligned with your foot.",
+      "Drive through the front foot to return to standing.",
+    ],
+    image: "/assets/images/bulgarian-split-squat.jpg",
+    videoUrl: "https://www.youtube.com/embed/2C-uNgKwPLE",
+    caloriesBurn: 85,
+  },
+
+  // =========================
+  // CARDIO
+  // =========================
+
+  {
+    id: "running",
+    name: "Outdoor Run",
+    category: "Cardio",
+    muscleGroups: ["Legs", "Core"],
+    difficulty: "Intermediate",
+    equipment: "None",
+    duration: 30,
+    sets: 1,
+    reps: 1,
+    description: "Build cardiovascular fitness with a steady, sustainable run.",
+    instructions: [
+      "Warm up with five minutes of brisk walking.",
+      "Set a pace that lets you speak in short sentences.",
+      "Cool down with an easy walk and light stretches.",
+    ],
+    image: "/assets/images/running.jpg",
+    videoUrl: "https://www.youtube.com/embed/brFHyOtTwH4",
+    caloriesBurn: 300,
+  },
+
+  {
+    id: "jumping-jacks",
+    name: "Jumping Jacks",
+    category: "Cardio",
+    muscleGroups: ["Legs", "Shoulders", "Core"],
+    difficulty: "Beginner",
+    equipment: "None",
+    duration: 5,
+    sets: 3,
+    reps: 30,
+    description:
+      "A simple full-body cardio exercise that raises your heart rate.",
+    instructions: [
+      "Stand with your feet together and arms by your sides.",
+      "Jump while moving your feet apart and arms overhead.",
+      "Jump back to the starting position.",
+    ],
+    image: "/assets/images/jumping-jacks.jpg",
+    videoUrl: "https://www.youtube.com/embed/c4DAnQ6DtF8",
+    caloriesBurn: 55,
+  },
+
+  {
+    id: "high-knees",
+    name: "High Knees",
+    category: "Cardio",
+    muscleGroups: ["Legs", "Core"],
+    difficulty: "Beginner",
+    equipment: "None",
+    duration: 5,
+    sets: 3,
+    reps: 30,
+    description:
+      "Increase your heart rate while training coordination and lower-body endurance.",
+    instructions: [
+      "Stand tall with your feet hip-width apart.",
+      "Drive one knee toward your chest.",
+      "Alternate knees quickly while maintaining an upright posture.",
+    ],
+    image: "/assets/images/high-knees.jpg",
+    videoUrl: "https://www.youtube.com/embed/OAJ_J3EZkdY",
+    caloriesBurn: 60,
+  },
+
+  {
+    id: "cycling",
+    name: "Stationary Cycling",
+    category: "Cardio",
+    muscleGroups: ["Legs"],
+    difficulty: "Beginner",
+    equipment: "Exercise Bike",
+    duration: 20,
+    sets: 1,
+    reps: 1,
+    description:
+      "A low-impact cardio workout that builds lower-body endurance.",
+    instructions: [
+      "Adjust the bike seat to a comfortable height.",
+      "Begin pedaling at an easy pace.",
+      "Gradually increase resistance while maintaining controlled breathing.",
+    ],
+    image: "/assets/images/cycling.jpg",
+    videoUrl: "https://www.youtube.com/embed/8iPEnn-ltC8",
+    caloriesBurn: 200,
+  },
+
+  {
+    id: "burpees",
+    name: "Burpees",
+    category: "Cardio",
+    muscleGroups: ["Legs", "Chest", "Core", "Arms"],
+    difficulty: "Advanced",
+    equipment: "None",
+    duration: 8,
+    sets: 3,
+    reps: 10,
+    description:
+      "A high-intensity full-body movement that challenges cardiovascular fitness.",
+    instructions: [
+      "Start standing and squat down.",
+      "Place your hands on the floor and jump your feet back.",
+      "Return your feet forward and jump vertically.",
+    ],
+    image: "/assets/images/burpees.jpg",
+    videoUrl: "https://www.youtube.com/embed/TU8QYVW0gDU",
+    caloriesBurn: 100,
+  },
+
+  {
+    id: "mountain-climbers",
+    name: "Mountain Climbers",
+    category: "Cardio",
+    muscleGroups: ["Core", "Legs", "Shoulders"],
+    difficulty: "Intermediate",
+    equipment: "None",
+    duration: 8,
+    sets: 3,
+    reps: 20,
+    description:
+      "A dynamic cardio exercise that combines core stability with rapid leg movement.",
+    instructions: [
+      "Start in a high plank position.",
+      "Drive one knee toward your chest.",
+      "Alternate legs while keeping your hips controlled.",
+    ],
+    image: "/assets/images/mountain-climbers.jpg",
+    videoUrl: "https://www.youtube.com/embed/nmwgirgXLYM",
+    caloriesBurn: 85,
+  },
+
+  // =========================
+  // FLEXIBILITY
+  // =========================
+
+  {
+    id: "hamstring-stretch",
+    name: "Standing Hamstring Stretch",
+    category: "Flexibility",
+    muscleGroups: ["Legs"],
+    difficulty: "Beginner",
+    equipment: "None",
+    duration: 5,
+    sets: 2,
+    reps: 1,
+    description:
+      "Stretch the back of the legs and improve lower-body flexibility.",
+    instructions: [
+      "Stand tall with one foot slightly forward.",
+      "Hinge forward from your hips.",
+      "Hold the stretch without bouncing.",
+    ],
+    image: "/assets/images/hamstring-stretch.jpg",
+    videoUrl: "https://www.youtube.com/embed/FDwp2V9w3J0",
+    caloriesBurn: 20,
+  },
+
+  {
+    id: "quad-stretch",
+    name: "Standing Quad Stretch",
+    category: "Flexibility",
+    muscleGroups: ["Legs"],
+    difficulty: "Beginner",
+    equipment: "None",
+    duration: 5,
+    sets: 2,
+    reps: 1,
+    description: "Stretch the front of the thighs and improve hip mobility.",
+    instructions: [
+      "Stand tall and hold onto a stable surface if needed.",
+      "Bend one knee and bring your heel toward your glutes.",
+      "Hold the ankle and gently draw it toward your body.",
+    ],
+    image: "/assets/images/quad-stretch.jpg",
+    videoUrl: "https://www.youtube.com/embed/0Y5G6H5Vw4Y",
+    caloriesBurn: 20,
+  },
+
+  {
+    id: "childs-pose",
+    name: "Child's Pose",
+    category: "Flexibility",
+    muscleGroups: ["Back", "Core"],
+    difficulty: "Beginner",
+    equipment: "Yoga Mat",
+    duration: 5,
+    sets: 2,
+    reps: 1,
+    description:
+      "A gentle stretch that promotes relaxation and mobility through the back and hips.",
+    instructions: [
+      "Kneel on the floor with your toes together.",
+      "Sit your hips toward your heels.",
+      "Extend your arms forward and relax into the stretch.",
+    ],
+    image: "/assets/images/childs-pose.jpg",
+    videoUrl: "https://www.youtube.com/embed/2MJGg-dUKh0",
+    caloriesBurn: 15,
+  },
+
+  {
+    id: "cat-cow",
+    name: "Cat-Cow Stretch",
+    category: "Flexibility",
+    muscleGroups: ["Back", "Core"],
+    difficulty: "Beginner",
+    equipment: "Yoga Mat",
+    duration: 5,
+    sets: 2,
+    reps: 10,
+    description:
+      "Improve spinal mobility with controlled flexion and extension.",
+    instructions: [
+      "Start on your hands and knees.",
+      "Round your spine upward while tucking your chin.",
+      "Then gently arch your spine while lifting your chest.",
+    ],
+    image: "/assets/images/cat-cow.jpg",
+    videoUrl: "https://www.youtube.com/embed/y39PrKY_4JM",
+    caloriesBurn: 15,
+  },
+
+  {
+    id: "pigeon-pose",
+    name: "Pigeon Pose",
+    category: "Flexibility",
+    muscleGroups: ["Legs", "Core"],
+    difficulty: "Advanced",
+    equipment: "Yoga Mat",
+    duration: 6,
+    sets: 2,
+    reps: 1,
+    description: "A deeper hip-opening stretch for experienced practitioners.",
+    instructions: [
+      "Start from a tabletop or downward-facing dog position.",
+      "Bring one knee forward and place the leg across the mat.",
+      "Lower your hips gently and hold the stretch.",
+    ],
+    image: "/assets/images/pigeon-pose.jpg",
+    videoUrl: "https://www.youtube.com/embed/0_zPqA65Nok",
+    caloriesBurn: 20,
+  },
+
+  // =========================
+  // BALANCE
+  // =========================
+
+  {
+    id: "single-leg-stand",
+    name: "Single-Leg Stand",
+    category: "Balance",
+    muscleGroups: ["Legs", "Core"],
+    difficulty: "Beginner",
+    equipment: "None",
+    duration: 5,
+    sets: 2,
+    reps: 1,
+    description:
+      "Improve balance and stability by maintaining a controlled single-leg position.",
+    instructions: [
+      "Stand tall with your feet together.",
+      "Lift one foot from the floor.",
+      "Maintain your balance while keeping your core engaged.",
+    ],
+    image: "/assets/images/single-leg-stand.jpg",
+    videoUrl: "https://www.youtube.com/embed/9bM9x7Yx5yI",
+    caloriesBurn: 20,
+  },
+
+  {
+    id: "heel-to-toe-walk",
+    name: "Heel-to-Toe Walk",
+    category: "Balance",
+    muscleGroups: ["Legs", "Core"],
+    difficulty: "Beginner",
+    equipment: "None",
+    duration: 5,
+    sets: 2,
+    reps: 10,
+    description:
+      "Practice controlled movement and balance through a narrow walking pattern.",
+    instructions: [
+      "Stand tall with your arms relaxed.",
+      "Place the heel of one foot directly in front of the toes of the other.",
+      "Continue walking slowly while maintaining control.",
+    ],
+    image: "/assets/images/heel-to-toe-walk.jpg",
+    videoUrl: "https://www.youtube.com/embed/0Y5G6H5Vw4Y",
+    caloriesBurn: 20,
+  },
+
+  {
+    id: "single-leg-deadlift",
+    name: "Single-Leg Deadlift",
+    category: "Balance",
+    muscleGroups: ["Legs", "Back", "Core"],
+    difficulty: "Intermediate",
+    equipment: "Dumbbells",
+    duration: 8,
+    sets: 3,
+    reps: 8,
+    description:
+      "Develop balance, hip stability, and posterior-chain strength.",
+    instructions: [
+      "Stand on one leg with a slight bend in your knee.",
+      "Hinge forward while extending the opposite leg behind you.",
+      "Return to standing while maintaining control.",
+    ],
+    image: "/assets/images/single-leg-deadlift.jpg",
+    videoUrl: "https://www.youtube.com/embed/0W-3cD0cG4Y",
+    caloriesBurn: 55,
+  },
+
+  {
+    id: "bosu-squat",
+    name: "BOSU Ball Squat",
+    category: "Balance",
+    muscleGroups: ["Legs", "Core"],
+    difficulty: "Advanced",
+    equipment: "BOSU Ball",
+    duration: 8,
+    sets: 3,
+    reps: 10,
+    description:
+      "Challenge lower-body strength and balance on an unstable surface.",
+    instructions: [
+      "Stand carefully on the BOSU ball.",
+      "Brace your core and lower into a controlled squat.",
+      "Push through your feet to return to standing.",
+    ],
+    image: "/assets/images/bosu-squat.jpg",
+    videoUrl: "https://www.youtube.com/embed/8O9L2WJZ0xI",
+    caloriesBurn: 65,
+  },
+
+  {
+    id: "warrior-three",
+    name: "Warrior III",
+    category: "Balance",
+    muscleGroups: ["Legs", "Core", "Shoulders"],
+    difficulty: "Advanced",
+    equipment: "Yoga Mat",
+    duration: 6,
+    sets: 2,
+    reps: 1,
+    description:
+      "A challenging balance position that develops stability and body control.",
+    instructions: [
+      "Stand tall and shift your weight onto one leg.",
+      "Extend the opposite leg backward while leaning your torso forward.",
+      "Extend your arms and hold the position with control.",
+    ],
+    image: "/assets/images/warrior-three.jpg",
+    videoUrl: "https://www.youtube.com/embed/4C-gxOE0j7s",
+    caloriesBurn: 30,
+  },
+];
+
+export const WEEKDAYS = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];

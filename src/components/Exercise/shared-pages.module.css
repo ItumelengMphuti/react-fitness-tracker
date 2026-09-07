@@ -1,0 +1,451 @@
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  padding: 72px 0 34px;
+}
+.pageHeader h1 {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: 0.92;
+  margin: 12px 0 16px;
+  letter-spacing: -0.05em;
+}
+.pageHeader p,
+.detailDescription {
+  color: var(--color-text-muted);
+  max-width: 620px;
+  line-height: 1.7;
+}
+.eyebrow {
+  color: #ff8d7b;
+  font: 0.72rem var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.headerStat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: var(--color-text-muted);
+  font: 0.75rem var(--font-mono);
+  text-transform: uppercase;
+}
+.headerStat strong {
+  color: var(--color-text);
+  font: 3rem var(--font-display);
+}
+.toolbar {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) repeat(3, auto);
+  gap: 12px;
+  padding: 18px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+}
+.toolbar input,
+.toolbar select,
+.addExercise select,
+.logForm input,
+.logForm select {
+  width: 100%;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+  padding: 12px;
+  font: inherit;
+}
+.search {
+  display: block;
+}
+.exerciseGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 28px 0;
+}
+.exerciseCard {
+  display: flex;
+  flex-direction: column;
+  min-height: 245px;
+  padding: 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+.exerciseCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-accent);
+}
+.exerciseCardTop,
+.meta,
+.cardActions,
+.panelHeader,
+.historyItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.exerciseCardTop {
+  color: var(--color-text-muted);
+  font: 0.7rem var(--font-mono);
+  text-transform: uppercase;
+}
+.tag {
+  color: #ff8d7b;
+}
+.exerciseCard h2 {
+  font-size: 1.75rem;
+  margin: 28px 0 8px;
+}
+.exerciseCard p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.meta {
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.cardActions {
+  margin-top: 18px;
+}
+.textLink {
+  color: #ff8d7b;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+.smallButton,
+.primaryButton {
+  border: 1px solid var(--color-accent);
+  color: var(--color-text);
+  background: var(--color-accent);
+  padding: 10px 14px;
+  border-radius: 4px;
+  font: 0.75rem var(--font-mono);
+  text-transform: uppercase;
+}
+.smallButton {
+  color: #ffad9f;
+  background: transparent;
+  border-color: var(--color-accent-dim);
+}
+.empty {
+  padding: 42px 20px;
+  text-align: center;
+  border: 1px dashed var(--color-line);
+  color: var(--color-text-muted);
+}
+.plannerLayout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+.dayList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.dayList button {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  text-align: left;
+  font: 1rem var(--font-display);
+  text-transform: uppercase;
+}
+.dayList button:hover,
+.dayActive {
+  color: var(--color-text) !important;
+  background: var(--color-surface) !important;
+  border-color: var(--color-line) !important;
+}
+.dayList strong {
+  color: var(--color-accent);
+}
+.planPanel,
+.progressPanel,
+.historyList,
+.logForm {
+  padding: 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+}
+.panelHeader h2,
+.logForm h2 {
+  margin-top: 8px;
+  font-size: 1.7rem;
+}
+.muted {
+  color: var(--color-text-muted);
+  font: 0.75rem var(--font-mono);
+}
+.addExercise {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.addExercise select {
+  min-width: 150px;
+}
+.planList {
+  margin-top: 25px;
+}
+.planItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  border-top: 1px solid var(--color-line);
+}
+.planNumber {
+  color: var(--color-accent);
+  font: 1rem var(--font-mono);
+}
+.planItem h3,
+.historyItem h3 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+}
+.planItem span,
+.historyItem span {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+.removeButton,
+.backButton {
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 0;
+  font: 1.3rem var(--font-body);
+  margin-left: auto;
+}
+.backButton {
+  display: block;
+  margin: 35px 0 25px;
+  font: 0.8rem var(--font-mono);
+}
+.historyLayout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.75fr) 1.25fr;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+.logForm {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-self: start;
+}
+.logForm label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--color-text-muted);
+  font: 0.75rem var(--font-mono);
+  text-transform: uppercase;
+}
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.historyList {
+  min-height: 260px;
+}
+.historyItem {
+  padding: 18px 0;
+  border-top: 1px solid var(--color-line);
+}
+.historyItem strong {
+  font: 1.3rem var(--font-display);
+  text-align: right;
+}
+.historyItem small {
+  display: block;
+  color: var(--color-text-muted);
+  font: 0.7rem var(--font-mono);
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  padding-bottom: 24px;
+}
+.metrics > div {
+  padding: 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+}
+.metrics strong {
+  display: block;
+  font: 2.3rem var(--font-display);
+}
+.metrics small {
+  color: var(--color-text-muted);
+  font: 0.8rem var(--font-mono);
+}
+.metrics span {
+  color: var(--color-text-muted);
+  font: 0.7rem var(--font-mono);
+  text-transform: uppercase;
+}
+.chart {
+  display: flex;
+  align-items: end;
+  justify-content: space-around;
+  gap: 16px;
+  min-height: 240px;
+  padding: 35px 10px 12px;
+}
+.barColumn {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font: 0.65rem var(--font-mono);
+}
+.bar {
+  width: 100%;
+  max-width: 52px;
+  min-height: 12px;
+  background: linear-gradient(var(--color-accent), #8e261d);
+  border-radius: 3px 3px 0 0;
+}
+.detailLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  padding-bottom: 70px;
+}
+.detailLayout h1 {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.9;
+  margin: 15px 0 24px;
+  letter-spacing: -0.05em;
+}
+.detailLayout h2 {
+  margin-top: 48px;
+  font-size: 1.8rem;
+}
+.detailMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px 0;
+}
+.detailMeta span {
+  padding: 12px;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font: 0.7rem var(--font-mono);
+  text-transform: uppercase;
+}
+.detailMeta strong {
+  display: block;
+  color: var(--color-text);
+  margin-top: 5px;
+}
+.instructions {
+  padding-left: 24px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+.instructions li {
+  padding: 8px 0 8px 8px;
+}
+.videoPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.videoWrap {
+  aspect-ratio: 16/9;
+  background: #000;
+  border: 1px solid var(--color-line);
+}
+.videoWrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.audioCard {
+  padding: 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+}
+.audioCard h3 {
+  margin: 10px 0 17px;
+}
+.audioCard audio {
+  width: 100%;
+}
+.detailLayout .addExercise {
+  margin-top: 30px;
+  justify-content: flex-start;
+}
+@media (max-width: 800px) {
+  .pageHeader {
+    padding-top: 48px;
+  }
+  .toolbar,
+  .exerciseGrid,
+  .historyLayout,
+  .detailLayout {
+    grid-template-columns: 1fr;
+  }
+  .plannerLayout {
+    grid-template-columns: 1fr;
+  }
+  .dayList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .dayList button {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .detailLayout {
+    gap: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .toolbar {
+    padding: 12px;
+  }
+  .dayList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+  .metrics {
+    gap: 8px;
+  }
+  .metrics > div {
+    padding: 15px;
+  }
+  .addExercise {
+    flex-wrap: wrap;
+  }
+}
