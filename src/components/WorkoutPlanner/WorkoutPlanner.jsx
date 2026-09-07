@@ -1,12 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { EXERCISES, WEEKDAYS } from "../../data/exercisesData";
 import { useFitness } from "../../context/FitnessContext";
 import styles from "../Exercise/shared-pages.module.css";
 
 function WorkoutPlannerPage() {
+  const { day: routeDay } = useParams();
   const { planner, addToPlanner, removeFromPlanner } = useFitness();
-  const [day, setDay] = useState("Monday");
+  const [day, setDay] = useState(
+    WEEKDAYS.includes(routeDay) ? routeDay : "Monday",
+  );
   const [selected, setSelected] = useState(EXERCISES[0].id);
   const exercises = planner[day] || [];
   return (
@@ -72,14 +75,18 @@ function WorkoutPlannerPage() {
           </div>
           <div className={styles.planList}>
             {exercises.map((exercise, index) => (
-              <div className={styles.planItem} key={exercise.id}>
+              <div
+                className={styles.planItem}
+                key={exercise.id}
+                style={{ animationDelay: `${index * 60}ms` }}
+              >
                 <span className={styles.planNumber}>0{index + 1}</span>
                 <div>
                   <Link to={`/exercises/${exercise.id}`}>
                     <h3>{exercise.name}</h3>
                   </Link>
                   <span>
-                    {exercise.muscle} · {exercise.duration}
+                    {exercise.muscleGroups.join(", ")} · {exercise.duration}
                   </span>
                 </div>
                 <button

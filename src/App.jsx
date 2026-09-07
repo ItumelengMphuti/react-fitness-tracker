@@ -21,6 +21,7 @@ function AppContent() {
           <Route path="/exercises" element={<ExercisesPage />} />
           <Route path="/exercises/:exerciseId" element={<ExerciseDetail />} />
           <Route path="/planner" element={<WorkoutPlannerPage />} />
+          <Route path="/planner/:day" element={<WorkoutPlannerPage />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/progress" element={<ProgressPage />} />
 

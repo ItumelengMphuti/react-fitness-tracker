@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 const NAV_LINKS = [
@@ -11,6 +11,15 @@ const NAV_LINKS = [
 
 function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const closeMenuOnDesktop = () => {
+      if (window.innerWidth > 760) setMenuOpen(false);
+    };
+
+    window.addEventListener("resize", closeMenuOnDesktop);
+    return () => window.removeEventListener("resize", closeMenuOnDesktop);
+  }, []);
 
   return (
     <header className={styles.header}>
@@ -25,14 +34,16 @@ function NavBar() {
 
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
           {NAV_LINKS.map((link) => (
-            <Link
+            <NavLink
               key={link.to}
               to={link.to}
-              className={styles.navLink}
+              className={({ isActive }) =>
+                `${styles.navLink} ${isActive ? styles.active : ""}`
+              }
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
 

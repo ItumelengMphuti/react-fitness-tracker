@@ -1,7 +1,9 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { EXERCISES } from "../../data/exercisesData";
 import { useFitness } from "../../context/FitnessContext";
+import Badge from "../UI/Badge";
+import SearchBar from "../UI/SearchBar";
 import styles from "./shared-pages.module.css";
 
 function ExercisesPage() {
@@ -10,6 +12,11 @@ function ExercisesPage() {
   const [difficulty, setDifficulty] = useState("All");
   const [sort, setSort] = useState("name");
   const { addToPlanner } = useFitness();
+  useEffect(() => {
+    document.title = query
+      ? `Search: ${query} | FitFlow`
+      : "Exercises | FitFlow";
+  }, [query]);
   const categories = [
     "All",
     ...new Set(EXERCISES.map((exercise) => exercise.category)),
@@ -24,7 +31,7 @@ function ExercisesPage() {
             difficulty === "All" || exercise.difficulty === difficulty,
         )
         .filter((exercise) =>
-          `${exercise.name} ${exercise.muscle} ${exercise.equipment}`
+          `${exercise.name} ${exercise.muscleGroups.join(" ")} ${exercise.equipment}`
             .toLowerCase()
             .includes(query.toLowerCase()),
         )
@@ -53,14 +60,10 @@ function ExercisesPage() {
         </div>
       </div>
       <div className={styles.toolbar}>
-        <label className={styles.search}>
-          <span className="srOnly">Search exercises</span>
-          <input
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search exercises..."
-          />
-        </label>
+        <SearchBar
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+        />
         <select
           value={category}
           onChange={(event) => setCategory(event.target.value)}
@@ -90,22 +93,26 @@ function ExercisesPage() {
         </select>
       </div>
       <div className={styles.exerciseGrid}>
-        {filtered.map((exercise) => (
-          <article className={styles.exerciseCard} key={exercise.id}>
+        {filtered.map((exercise, index) => (
+          <article
+            className={styles.exerciseCard}
+            key={exercise.id}
+            style={{ animationDelay: `${index * 50}ms` }}
+          >
             <img
               src={exercise.image}
               alt={exercise.name}
               className={styles.exerciseCardImage}
             />
             <div className={styles.exerciseCardTop}>
-              <span className={styles.tag}>{exercise.category}</span>
+              <Badge tone="accent">{exercise.category}</Badge>
               <span>{exercise.duration}</span>
             </div>
             <h2>{exercise.name}</h2>
             <p>{exercise.description}</p>
             <div className={styles.meta}>
-              <span>{exercise.muscle}</span>
-              <span>{exercise.difficulty}</span>
+              <span>{exercise.muscleGroups.join(", ")}</span>
+              <Badge tone="muted">{exercise.difficulty}</Badge>
             </div>
             <div className={styles.cardActions}>
               <Link

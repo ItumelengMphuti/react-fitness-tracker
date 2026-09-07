@@ -1,8 +1,4 @@
 export const EXERCISES = [
-  // =========================
-  // STRENGTH
-  // =========================
-
   {
     id: "barbell-squat",
     name: "Barbell Squat",
@@ -201,10 +197,6 @@ export const EXERCISES = [
     caloriesBurn: 85,
   },
 
-  // =========================
-  // CARDIO
-  // =========================
-
   {
     id: "running",
     name: "Outdoor Run",
@@ -336,10 +328,6 @@ export const EXERCISES = [
     caloriesBurn: 85,
   },
 
-  // =========================
-  // FLEXIBILITY
-  // =========================
-
   {
     id: "hamstring-stretch",
     name: "Standing Hamstring Stretch",
@@ -447,10 +435,6 @@ export const EXERCISES = [
     videoUrl: "https://www.youtube.com/embed/0_zPqA65Nok",
     caloriesBurn: 20,
   },
-
-  // =========================
-  // BALANCE
-  // =========================
 
   {
     id: "single-leg-stand",

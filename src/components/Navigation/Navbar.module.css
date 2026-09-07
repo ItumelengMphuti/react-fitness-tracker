@@ -51,6 +51,10 @@
   color: var(--color-text);
 }
 
+.navLink.active {
+  color: var(--color-accent);
+}
+
 .account {
   display: flex;
   align-items: center;

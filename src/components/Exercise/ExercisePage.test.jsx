@@ -41,3 +41,28 @@ test("shows an empty state when no exercise matches", async () => {
     screen.getByRole("heading", { name: "No exercises found" }),
   ).toBeInTheDocument();
 });
+
+test("supports category, difficulty, sorting, and planner actions", async () => {
+  const user = userEvent.setup();
+  renderExercises();
+
+  await user.selectOptions(
+    screen.getByRole("combobox", { name: "Filter by category" }),
+    "Cardio",
+  );
+  await user.selectOptions(
+    screen.getByRole("combobox", { name: "Filter by difficulty" }),
+    "Advanced",
+  );
+  await user.selectOptions(
+    screen.getByRole("combobox", { name: "Sort exercises" }),
+    "difficulty",
+  );
+
+  expect(screen.getByRole("heading", { name: "Burpees" })).toBeInTheDocument();
+  expect(
+    screen.queryByRole("heading", { name: "Push-up" }),
+  ).not.toBeInTheDocument();
+
+  await user.click(screen.getAllByRole("button", { name: "+ Monday" })[0]);
+});

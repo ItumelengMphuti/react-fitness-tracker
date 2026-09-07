@@ -1,0 +1,26 @@
+.mediaCard {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+}
+
+.mediaCard h2 {
+  font-size: 1.25rem;
+}
+
+.mediaCard p {
+  color: var(--color-text-muted);
+}
+
+.video,
+.audio {
+  width: 100%;
+}
+
+.video {
+  aspect-ratio: 16 / 9;
+  background: #000;
+}

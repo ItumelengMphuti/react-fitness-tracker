@@ -33,14 +33,9 @@ function ExerciseDetail() {
           <h1>{exercise.name}</h1>
 
           <p className={styles.detailDescription}>{exercise.description}</p>
-          <span className={styles.eyebrow}>
-            {exercise.category} · {exercise.difficulty}
-          </span>
-          <h1>{exercise.name}</h1>
-          <p className={styles.detailDescription}>{exercise.description}</p>
           <div className={styles.detailMeta}>
             <span>
-              Target <strong>{exercise.muscle}</strong>
+              Target <strong>{exercise.muscleGroups.join(", ")}</strong>
             </span>
             <span>
               Equipment <strong>{exercise.equipment}</strong>

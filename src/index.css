@@ -1,27 +1,21 @@
-/* ============================================
-   DESIGN TOKENS
-   ============================================ */
 :root {
-
-  --color-bg: #12141a;           /* navy-charcoal — main background, from the logo mark */
-  --color-surface: #1c1f26;      /* steel — cards, raised panels */
-  --color-surface-alt: #262a33;  /* lighter steel — hover/alt panels */
-  --color-line: #323642;         /* grid line gray — dividers, rules */
-  --color-text: #f2f1e9;         /* chalk white — primary text, echoes the logo background */
-  --color-text-muted: #9aa1ac;   /* slate gray-blue — matches the "FIT" wordmark */
-  --color-accent: #a3e635;       /* lime green — matches the "FLOW" wordmark, primary actions */
-  --color-accent-dim: #3d5a17;   /* deep moss — borders/backgrounds on accent elements */
-  --color-on-accent: #12141a;    /* dark text/icons placed on the lime accent for contrast */
-  --color-blue: #6b7480;         /* slate — secondary accent, echoes the "FIT" gray-blue */
-  --color-paper: #ece7da;        /* index-card paper for the hero signature */
+  --color-bg: #12141a;
+  --color-surface: #1c1f26;
+  --color-surface-alt: #262a33;
+  --color-line: #323642;
+  --color-text: #f2f1e9;
+  --color-text-muted: #9aa1ac;
+  --color-accent: #a3e635;
+  --color-accent-dim: #3d5a17;
+  --color-on-accent: #12141a;
+  --color-blue: #6b7480;
+  --color-paper: #ece7da;
   --color-paper-text: #1c1a16;
 
-  /* Type */
-  --font-display: 'Oswald', 'Arial Narrow', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', monospace;
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
 
-  /* Layout */
   --container-width: 1180px;
   --radius: 2px;
 }
@@ -44,7 +38,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -77,7 +74,8 @@ button {
   border: 0;
 }
 
-img, svg {
+img,
+svg {
   display: block;
   max-width: 100%;
 }
@@ -89,19 +87,19 @@ img, svg {
   padding: 0 24px;
 }
 
-/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
 
-/* Visible keyboard focus */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {

@@ -3,3 +3,7 @@ import "@testing-library/jest-dom";
 
 globalThis.TextEncoder = TextEncoder;
 globalThis.TextDecoder = TextDecoder;
+
+beforeEach(() => {
+  window.localStorage.clear();
+});

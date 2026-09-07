@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { EXERCISES } from "../data/exercisesData";
 import { useFitness } from "../context/FitnessContext";
 import styles from "../components/Exercise/shared-pages.module.css";
@@ -9,6 +9,9 @@ function HistoryPage() {
   const [sets, setSets] = useState("3");
   const [reps, setReps] = useState("10");
   const [weight, setWeight] = useState("20");
+  useEffect(() => {
+    document.title = "History | FitFlow";
+  }, []);
   function submit(event) {
     event.preventDefault();
     const exercise = EXERCISES.find((item) => item.id === exerciseId);

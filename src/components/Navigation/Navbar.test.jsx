@@ -62,4 +62,17 @@ describe("NavBar", () => {
     );
     await waitFor(() => expect(navigation.className).not.toContain("navOpen"));
   });
+
+  test("closes the menu after choosing a route", async () => {
+    const user = userEvent.setup();
+    renderNavBar();
+
+    await user.click(screen.getByRole("button", { name: "Open menu" }));
+    await user.click(screen.getByRole("link", { name: "Exercises" }));
+
+    expect(screen.getByRole("button", { name: "Open menu" })).toHaveAttribute(
+      "aria-expanded",
+      "false",
+    );
+  });
 });

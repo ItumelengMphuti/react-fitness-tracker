@@ -18,7 +18,7 @@ const renderDetail = (exerciseId) =>
 test("renders exercise instructions and demonstration", () => {
   renderDetail("push-up");
 
-  expect(screen.getAllByRole("heading", { name: "Push-up" })).toHaveLength(2);
+  expect(screen.getByRole("heading", { name: "Push-up" })).toBeInTheDocument();
   expect(
     screen.getByRole("heading", { name: "How to perform it" }),
   ).toBeInTheDocument();

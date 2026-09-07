@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styles from "./common.module.css";
 
 function Loading({ message = "Loading your training space" }) {
@@ -10,3 +11,7 @@ function Loading({ message = "Loading your training space" }) {
 }
 
 export default Loading;
+
+Loading.propTypes = {
+  message: PropTypes.string,
+};
