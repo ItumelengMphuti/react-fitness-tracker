@@ -128,7 +128,7 @@ Add the required application screenshots to [`screenshots/`](screenshots/) befor
 - Exercises page with filters
 ![Exercise page screenshot](screenshots/exercisepage.png)
 - Exercise detail page with video
-![Exercise details screenshot](screenshots/exercisedetails.png)
+![Exercise details screenshot](screenshots/exercisedetail.png)
 - Workout planner page
 ![Planner screenshot](screenshots/planner.png)
 - Workout history page
