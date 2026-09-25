@@ -1,10 +1,13 @@
 import { useFitness } from "../context/FitnessContext";
+import ProgressChartBar from "../components/ProgressChartBar";
 import styles from "../components/Exercise/shared-pages.module.css";
 
 function ProgressPage() {
   const { history } = useFitness();
+  /** Volume is the total load moved across every set and repetition. */
+  const calculateVolume = (item) => item.sets * item.reps * item.weight;
   const totalVolume = history.reduce(
-    (sum, item) => sum + item.sets * item.reps * item.weight,
+    (sum, item) => sum + calculateVolume(item),
     0,
   );
   const exerciseCount = new Set(history.map((item) => item.exercise)).size;
@@ -59,20 +62,11 @@ function ProgressPage() {
         {chart.length ? (
           <div className={styles.chart}>
             {chart.map((item) => (
-              <div className={styles.barColumn} key={item.id}>
-                <span>{item.sets * item.reps * item.weight}</span>
-                <div
-                  className={styles.bar}
-                  style={{
-                    height: `${Math.max(12, ((item.sets * item.reps * item.weight) / Math.max(...chart.map((entry) => entry.sets * entry.reps * entry.weight))) * 170)}px`,
-                  }}
-                />
-                <small>
-                  {new Date(item.date).toLocaleDateString(undefined, {
-                    weekday: "short",
-                  })}
-                </small>
-              </div>
+              <ProgressChartBar
+                item={item}
+                key={item.id}
+                maxVolume={Math.max(...chart.map(calculateVolume))}
+              />
             ))}
           </div>
         ) : (

@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 import { EXERCISES } from "../../data/exercisesData";
 import { useFitness } from "../../context/FitnessContext";
-import Badge from "../UI/Badge";
+import Loading from "../common/Loading";
 import SearchBar from "../UI/SearchBar";
+import ExerciseCard from "./ExerciseCard";
 import styles from "./shared-pages.module.css";
 
 function ExercisesPage() {
@@ -11,7 +11,9 @@ function ExercisesPage() {
   const [category, setCategory] = useState("All");
   const [difficulty, setDifficulty] = useState("All");
   const [sort, setSort] = useState("name");
-  const { addToPlanner } = useFitness();
+  const { addToPlanner, error: contextError } = useFitness();
+  const [isLoading] = useState(false);
+  const [error] = useState(contextError);
   useEffect(() => {
     document.title = query
       ? `Search: ${query} | FitFlow`
@@ -92,46 +94,25 @@ function ExercisesPage() {
           <option value="difficulty">Sort: difficulty</option>
         </select>
       </div>
-      <div className={styles.exerciseGrid}>
-        {filtered.map((exercise, index) => (
-          <article
-            className={styles.exerciseCard}
-            key={exercise.id}
-            style={{ animationDelay: `${index * 50}ms` }}
-          >
-            <img
-              src={exercise.image}
-              alt={exercise.name}
-              className={styles.exerciseCardImage}
+      {isLoading ? (
+        <Loading />
+      ) : error ? (
+        <div className={styles.empty} role="alert">
+          <h2>Exercises unavailable</h2>
+          <p>{error}</p>
+        </div>
+      ) : filtered.length ? (
+        <div className={styles.exerciseGrid}>
+          {filtered.map((exercise, index) => (
+            <ExerciseCard
+              exercise={exercise}
+              index={index}
+              key={exercise.id}
+              onAddToPlanner={addToPlanner}
             />
-            <div className={styles.exerciseCardTop}>
-              <Badge tone="accent">{exercise.category}</Badge>
-              <span>{exercise.duration}</span>
-            </div>
-            <h2>{exercise.name}</h2>
-            <p>{exercise.description}</p>
-            <div className={styles.meta}>
-              <span>{exercise.muscleGroups.join(", ")}</span>
-              <Badge tone="muted">{exercise.difficulty}</Badge>
-            </div>
-            <div className={styles.cardActions}>
-              <Link
-                className={styles.textLink}
-                to={`/exercises/${exercise.id}`}
-              >
-                View form →
-              </Link>
-              <button
-                className={styles.smallButton}
-                onClick={() => addToPlanner("Monday", exercise)}
-              >
-                + Monday
-              </button>
-            </div>
-          </article>
-        ))}
-      </div>
-      {!filtered.length && (
+          ))}
+        </div>
+      ) : (
         <div className={styles.empty}>
           <h2>No exercises found</h2>
           <p>Try a different search or filter.</p>

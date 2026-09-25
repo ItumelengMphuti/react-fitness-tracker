@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { EXERCISES, WEEKDAYS } from "../../data/exercisesData";
 import { useFitness } from "../../context/FitnessContext";
+import PlannerDayCard from "./PlannerDayCard";
 import styles from "../Exercise/shared-pages.module.css";
 
 function WorkoutPlannerPage() {
@@ -74,31 +75,18 @@ function WorkoutPlannerPage() {
             </label>
           </div>
           <div className={styles.planList}>
-            {exercises.map((exercise, index) => (
-              <div
-                className={styles.planItem}
-                key={exercise.id}
-                style={{ animationDelay: `${index * 60}ms` }}
-              >
-                <span className={styles.planNumber}>0{index + 1}</span>
-                <div>
-                  <Link to={`/exercises/${exercise.id}`}>
-                    <h3>{exercise.name}</h3>
-                  </Link>
-                  <span>
-                    {exercise.muscleGroups.join(", ")} · {exercise.duration}
-                  </span>
-                </div>
-                <button
-                  className={styles.removeButton}
-                  onClick={() => removeFromPlanner(day, exercise.id)}
-                  aria-label={`Remove ${exercise.name}`}
-                >
-                  ×
-                </button>
-              </div>
-            ))}
-            {!exercises.length && (
+            {exercises.length ? (
+              exercises.map((exercise, index) => (
+                <PlannerDayCard
+                  exercise={exercise}
+                  index={index}
+                  key={exercise.id}
+                  onRemove={(exerciseId) =>
+                    removeFromPlanner(day, exerciseId)
+                  }
+                />
+              ))
+            ) : (
               <div className={styles.empty}>
                 <p>Select a movement above to start this day.</p>
               </div>

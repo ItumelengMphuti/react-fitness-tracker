@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { EXERCISES } from "../data/exercisesData";
 import { useFitness } from "../context/FitnessContext";
+import Loading from "../components/common/Loading";
 import styles from "../components/Exercise/shared-pages.module.css";
 
 function HistoryPage() {
-  const { history, logWorkout } = useFitness();
+  const { history, logWorkout, error: contextError } = useFitness();
+  const [isLoading] = useState(false);
+  const [error] = useState(contextError);
   const [exerciseId, setExerciseId] = useState(EXERCISES[0].id);
   const [sets, setSets] = useState("3");
   const [reps, setReps] = useState("10");
@@ -88,25 +91,33 @@ function HistoryPage() {
             <h2>Recent sessions</h2>
             <span className={styles.muted}>{history.length} logged</span>
           </div>
-          {history.map((item) => (
-            <article className={styles.historyItem} key={item.id}>
-              <div>
-                <h3>{item.exercise}</h3>
-                <span>
-                  {new Date(item.date).toLocaleDateString(undefined, {
-                    month: "short",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
-                </span>
-              </div>
-              <strong>
-                {item.sets} × {item.reps}
-                <small>{item.weight} kg</small>
-              </strong>
-            </article>
-          ))}
-          {!history.length && (
+          {isLoading ? (
+            <Loading />
+          ) : error ? (
+            <div className={styles.empty} role="alert">
+              <h2>History unavailable</h2>
+              <p>{error}</p>
+            </div>
+          ) : history.length ? (
+            history.map((item) => (
+              <article className={styles.historyItem} key={item.id}>
+                <div>
+                  <h3>{item.exercise}</h3>
+                  <span>
+                    {new Date(item.date).toLocaleDateString(undefined, {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </span>
+                </div>
+                <strong>
+                  {item.sets} × {item.reps}
+                  <small>{item.weight} kg</small>
+                </strong>
+              </article>
+            ))
+          ) : (
             <div className={styles.empty}>
               <p>Your logged workouts will appear here.</p>
             </div>

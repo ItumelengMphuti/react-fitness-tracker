@@ -24,3 +24,18 @@ test("supports an omitted description", () => {
 
   expect(screen.queryByText("Prepare to train")).not.toBeInTheDocument();
 });
+
+test("renders YouTube URLs as embeddable videos", () => {
+  render(
+    <VideoPlayer
+      title="Movement primer"
+      videoUrl="https://www.youtube.com/watch?v=xkNgd0HJQgQ"
+    />,
+  );
+
+  expect(screen.getByTitle("Movement primer video")).toHaveAttribute(
+    "src",
+    "https://www.youtube.com/embed/xkNgd0HJQgQ?controls=1",
+  );
+  expect(screen.queryByRole("video")).not.toBeInTheDocument();
+});

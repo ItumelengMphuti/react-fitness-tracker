@@ -92,7 +92,7 @@ function Home() {
             <VideoPlayer
               title="Movement primer"
               description="A short movement demonstration before you train."
-              videoUrl="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+              videoUrl="https://www.youtube.com/watch?v=xkNgd0HJQgQ"
             />
             <AudioPlayer
               title="Training soundtrack"
